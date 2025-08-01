@@ -1,10 +1,7 @@
-package services;
+package services.RestHelper;
 
 import dto.Courses.CourseDTO;
-import dto.User.UserDTO;
 import io.restassured.RestAssured;
-import io.restassured.response.ValidatableResponse;
-import org.codehaus.jackson.map.util.JSONPObject;
 import java.util.List;
 
 public class CourseRestClient extends AbsBaseRestClient{

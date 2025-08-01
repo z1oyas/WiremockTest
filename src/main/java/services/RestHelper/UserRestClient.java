@@ -1,4 +1,4 @@
-package services;
+package services.RestHelper;
 
 import dto.User.UserDTO;
 import io.restassured.RestAssured;

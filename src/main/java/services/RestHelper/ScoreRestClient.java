@@ -1,9 +1,7 @@
-package services;
+package services.RestHelper;
 
 import dto.Score.ScoreDTO;
-import dto.User.UserDTO;
 import io.restassured.RestAssured;
-import java.util.List;
 
 public class ScoreRestClient extends AbsBaseRestClient {
 

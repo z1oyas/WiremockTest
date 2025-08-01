@@ -4,11 +4,12 @@ import com.github.javafaker.Faker;
 import com.google.inject.AbstractModule;
 import com.google.inject.Provides;
 import com.google.inject.Singleton;
-import services.CourseRestClient;
-import services.ScoreRestClient;
-import services.UserRestClient;
+import services.RestHelper.CourseRestClient;
+import services.RestHelper.ScoreRestClient;
+import services.RestHelper.UserRestClient;
+import validators.SoapXMLValidator;
 
-public class RestClientModule  extends AbstractModule {
+public class ApiClientModule extends AbstractModule {
 
   @Provides
   @Singleton
@@ -32,5 +33,11 @@ public class RestClientModule  extends AbstractModule {
   @Singleton
   public Faker getFaker() {
     return new Faker();
+  }
+
+  @Provides
+  @Singleton
+  public SoapXMLValidator getSoapXMLValidator() {
+    return new SoapXMLValidator();
   }
 }

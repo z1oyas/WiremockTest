@@ -1,4 +1,4 @@
-package user;
+package rest;
 
 import com.github.javafaker.Faker;
 import dto.Courses.CourseDTO;
@@ -8,9 +8,9 @@ import extendtions.APIExtentions;
 import jakarta.inject.Inject;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
-import services.CourseRestClient;
-import services.ScoreRestClient;
-import services.UserRestClient;
+import services.RestHelper.CourseRestClient;
+import services.RestHelper.ScoreRestClient;
+import services.RestHelper.UserRestClient;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -45,7 +45,7 @@ public class RestApiTest {
   }
 
   @Test
-  public void testGetUser() throws IOException {
+  public void testGetUserScore() throws IOException {
 
     ScoreDTO userScore = scoreRestClient.getUserScore(faker.number().numberBetween(1, 100));
 
