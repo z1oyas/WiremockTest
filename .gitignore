@@ -1,0 +1,39 @@
+# === Maven ===
+/target/
+!.mvn/wrapper/maven-wrapper.jar
+.mvn/wrapper/maven-wrapper.properties
+.mvn/wrapper/maven-wrapper.xml
+**/dependency-reduced-pom.xml
+**/release.properties
+**/buildNumber.properties
+**/pom.xml.tag
+**/pom.xml.releaseBackup
+**/pom.xml.versionsBackup
+**/pom.xml.next
+
+# === IntelliJ IDEA ===
+.idea/
+*.iml
+*.iws
+*.ipr
+
+# === VS Code ===
+.vscode/
+
+# === Logs ===
+*.log
+
+# === OS ===
+.DS_Store
+Thumbs.db
+
+# === Java ===
+*.class
+
+# === Allure reports ===
+allure-results/
+allure-report/
+
+# === Test Output ===
+test-output/
+surefire-reports/
