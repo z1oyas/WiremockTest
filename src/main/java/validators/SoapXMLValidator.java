@@ -13,7 +13,6 @@ import java.io.StringReader;
 public class SoapXMLValidator {
   private Validator initValidaor(String path) {
   SchemaFactory factory = SchemaFactory.newInstance(XMLConstants.W3C_XML_SCHEMA_NS_URI);
-  //Source schemaFile = new StreamSource("src/main/resources/schemas/soap/"+path);
     Source[] schemas = {
         new StreamSource("src/main/resources/schemas/soap/"+path)
     };

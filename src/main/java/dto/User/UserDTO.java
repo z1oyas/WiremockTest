@@ -15,7 +15,7 @@ public class UserDTO {
     this.age = age;
   }
 
-  public String getCourсe() {
+  public String getCource() {
     return cource;
   }
 

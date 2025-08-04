@@ -5,12 +5,8 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 import com.github.javafaker.Faker;
 import extendtions.APIExtentions;
 import jakarta.inject.Inject;
-import org.jsoup.Jsoup;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
-import services.RestHelper.CourseRestClient;
-import services.RestHelper.ScoreRestClient;
-import services.RestHelper.UserRestClient;
 import services.SoapHelper.CourseSoapClient;
 import services.SoapHelper.ScoreSoapClient;
 import services.SoapHelper.UserSoapClient;
@@ -36,7 +32,7 @@ public class SoapApiTest {
     private ScoreSoapClient scoreSoapClient;
 
     @Test
-    public void testGetAllCoursesSoap() throws IOException {
+    public void testGetAllCoursesSoap() {
       String requestBody = "<?xml version=\"1.0\" encoding=\"ISO-8859-1\"?>\n" +
                                "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\">\n" +
                                "   <soapenv:Body>\n" +
@@ -45,14 +41,13 @@ public class SoapApiTest {
                                "</soapenv:Envelope>";
 
       String response = courseSoapClient.getAllCoursesSoap(requestBody);
-      //assertTrue(soapValidator.isValid("schemaCourseSoap.xsd",response));
 
       assertTrue(soapValidator.isValid("Course/soap-envelope.xsd",response));
 
     }
 
   @Test
-  public void testGetUserScoreSoap() throws IOException {
+  public void testGetUserScoreSoap() {
     int randomId = faker.number().numberBetween(1, 100);
     String requestBody = "<?xml version=\"1.0\" encoding=\"ISO-8859-1\"?>\n" +
                              "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\">\n" +
@@ -68,7 +63,7 @@ public class SoapApiTest {
   }
 
   @Test
-  public void testGetAllUsersSoap() throws IOException {
+  public void testGetAllUsersSoap() {
     String requestBody = "<?xml version=\"1.0\" encoding=\"ISO-8859-1\"?>\n" +
                              "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\">\n" +
                              "   <soapenv:Body>\n" +

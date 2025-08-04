@@ -1,9 +1,6 @@
 package services.SoapHelper;
 
-import dto.Courses.CourseDTO;
 import io.restassured.RestAssured;
-import services.RestHelper.AbsBaseRestClient;
-import java.util.List;
 
 public class CourseSoapClient extends AbsBaseSoapClient {
 

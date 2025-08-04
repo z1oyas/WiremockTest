@@ -1,8 +1,6 @@
 package services.SoapHelper;
 
-import dto.Score.ScoreDTO;
 import io.restassured.RestAssured;
-import services.RestHelper.AbsBaseRestClient;
 
 public class ScoreSoapClient extends AbsBaseSoapClient {
 

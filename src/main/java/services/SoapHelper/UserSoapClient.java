@@ -1,9 +1,6 @@
 package services.SoapHelper;
 
-import dto.User.UserDTO;
 import io.restassured.RestAssured;
-import services.RestHelper.AbsBaseRestClient;
-import java.util.List;
 
 public class UserSoapClient extends AbsBaseSoapClient {
 
