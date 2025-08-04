@@ -12,18 +12,18 @@ import java.io.StringReader;
 
 public class SoapXMLValidator {
   private Validator initValidaor(String path) {
-  SchemaFactory factory = SchemaFactory.newInstance(XMLConstants.W3C_XML_SCHEMA_NS_URI);
+    SchemaFactory factory = SchemaFactory.newInstance(XMLConstants.W3C_XML_SCHEMA_NS_URI);
     Source[] schemas = {
         new StreamSource("src/main/resources/schemas/soap/"+path)
     };
-  try {
-  Schema schema = factory.newSchema(schemas);
-    return schema.newValidator();
-}
-  catch (SAXException e)
-  {
-    e.printStackTrace();
-  }
+    try {
+      Schema schema = factory.newSchema(schemas);
+      return schema.newValidator();
+    }
+    catch (SAXException e)
+    {
+      e.printStackTrace();
+    }
     return null;
   }
 

@@ -1,4 +1,4 @@
-package dto.Score;
+package dto.score;
 
 public class ScoreDTO {
   private  String score;

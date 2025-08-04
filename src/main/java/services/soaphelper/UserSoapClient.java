@@ -1,11 +1,11 @@
-package services.SoapHelper;
+package services.soaphelper;
 
 import io.restassured.RestAssured;
 
 public class UserSoapClient extends AbsBaseSoapClient {
 
   public String getAllUsersSoap(String body) {
-   return RestAssured.given(requestSpecification())
+    return RestAssured.given(requestSpecification())
               .body(body)
               .log().all()
               .when()

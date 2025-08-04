@@ -1,6 +1,6 @@
-package services.RestHelper;
+package services.resthelper;
 
-import dto.Courses.CourseDTO;
+import dto.courses.CourseDTO;
 import io.restassured.RestAssured;
 import java.util.List;
 

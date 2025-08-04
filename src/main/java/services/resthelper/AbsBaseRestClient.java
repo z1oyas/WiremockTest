@@ -1,4 +1,4 @@
-package services.RestHelper;
+package services.resthelper;
 
 import io.restassured.RestAssured;
 import io.restassured.parsing.Parser;
@@ -7,7 +7,7 @@ import io.restassured.specification.ResponseSpecification;
 
 public abstract class AbsBaseRestClient {
 
-  public AbsBaseRestClient() {
+  static {
     RestAssured.defaultParser = Parser.JSON;
   }
 

@@ -1,4 +1,4 @@
-package services.SoapHelper;
+package services.soaphelper;
 
 import io.restassured.RestAssured;
 

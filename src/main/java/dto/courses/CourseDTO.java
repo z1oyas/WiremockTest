@@ -1,4 +1,4 @@
-package dto.Courses;
+package dto.courses;
 
 public class CourseDTO {
   private  String name;

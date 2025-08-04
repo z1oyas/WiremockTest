@@ -4,12 +4,12 @@ import com.github.javafaker.Faker;
 import com.google.inject.AbstractModule;
 import com.google.inject.Provides;
 import com.google.inject.Singleton;
-import services.RestHelper.CourseRestClient;
-import services.RestHelper.ScoreRestClient;
-import services.RestHelper.UserRestClient;
-import services.SoapHelper.CourseSoapClient;
-import services.SoapHelper.ScoreSoapClient;
-import services.SoapHelper.UserSoapClient;
+import services.resthelper.CourseRestClient;
+import services.resthelper.ScoreRestClient;
+import services.resthelper.UserRestClient;
+import services.soaphelper.CourseSoapClient;
+import services.soaphelper.ScoreSoapClient;
+import services.soaphelper.UserSoapClient;
 import validators.SoapXMLValidator;
 
 public class ApiClientModule extends AbstractModule {

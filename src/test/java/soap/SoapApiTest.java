@@ -7,54 +7,53 @@ import extendtions.APIExtentions;
 import jakarta.inject.Inject;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
-import services.SoapHelper.CourseSoapClient;
-import services.SoapHelper.ScoreSoapClient;
-import services.SoapHelper.UserSoapClient;
+import services.soaphelper.CourseSoapClient;
+import services.soaphelper.ScoreSoapClient;
+import services.soaphelper.UserSoapClient;
 import validators.SoapXMLValidator;
-import java.io.IOException;
 
 @ExtendWith(APIExtentions.class)
 public class SoapApiTest {
 
-    @Inject
-    private SoapXMLValidator soapValidator;
+  @Inject
+  private SoapXMLValidator soapValidator;
 
-    @Inject
-    private Faker faker;
+  @Inject
+  private Faker faker;
 
-    @Inject
-    private UserSoapClient userSoapClient;
+  @Inject
+  private UserSoapClient userSoapClient;
 
-    @Inject
-    private CourseSoapClient courseSoapClient;
+  @Inject
+  private CourseSoapClient courseSoapClient;
 
-    @Inject
-    private ScoreSoapClient scoreSoapClient;
+  @Inject
+  private ScoreSoapClient scoreSoapClient;
 
-    @Test
-    public void testGetAllCoursesSoap() {
-      String requestBody = "<?xml version=\"1.0\" encoding=\"ISO-8859-1\"?>\n" +
-                               "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\">\n" +
-                               "   <soapenv:Body>\n" +
-                               "      <GetCourses/>\n" +
-                               "   </soapenv:Body>\n" +
-                               "</soapenv:Envelope>";
+  @Test
+  public void testGetAllCoursesSoap() {
+    String requestBody = "<?xml version=\"1.0\" encoding=\"ISO-8859-1\"?>\n"
+                               + "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\">\n"
+                               + "   <soapenv:Body>\n"
+                               + "      <GetCourses/>\n"
+                               + "   </soapenv:Body>\n"
+                               + "</soapenv:Envelope>";
 
-      String response = courseSoapClient.getAllCoursesSoap(requestBody);
+    String response = courseSoapClient.getAllCoursesSoap(requestBody);
 
-      assertTrue(soapValidator.isValid("Course/soap-envelope.xsd",response));
+    assertTrue(soapValidator.isValid("Course/soap-envelope.xsd",response));
 
-    }
+  }
 
   @Test
   public void testGetUserScoreSoap() {
     int randomId = faker.number().numberBetween(1, 100);
-    String requestBody = "<?xml version=\"1.0\" encoding=\"ISO-8859-1\"?>\n" +
-                             "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\">\n" +
-                             "   <soapenv:Body>\n" +
-                             "      <GetUser/>\n" +
-                             "   </soapenv:Body>\n" +
-                             "</soapenv:Envelope>";
+    String requestBody = "<?xml version=\"1.0\" encoding=\"ISO-8859-1\"?>\n"
+                             + "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\">\n"
+                             + "   <soapenv:Body>\n"
+                             + "      <GetUser/>\n"
+                             + "   </soapenv:Body>\n"
+                             + "</soapenv:Envelope>";
 
     String response = scoreSoapClient.getUserScoreSoap(requestBody, randomId);
 
@@ -64,12 +63,12 @@ public class SoapApiTest {
 
   @Test
   public void testGetAllUsersSoap() {
-    String requestBody = "<?xml version=\"1.0\" encoding=\"ISO-8859-1\"?>\n" +
-                             "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\">\n" +
-                             "   <soapenv:Body>\n" +
-                             "      <GetAllUsers/>\n" +
-                             "   </soapenv:Body>\n" +
-                             "</soapenv:Envelope>";
+    String requestBody = "<?xml version=\"1.0\" encoding=\"ISO-8859-1\"?>\n"
+                             + "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\">\n"
+                             + "   <soapenv:Body>\n"
+                             + "      <GetAllUsers/>\n"
+                             + "   </soapenv:Body>\n"
+                             + "</soapenv:Envelope>";
 
     String response = userSoapClient.getAllUsersSoap(requestBody);
 

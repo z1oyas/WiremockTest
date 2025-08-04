@@ -1,4 +1,4 @@
-package services.SoapHelper;
+package services.soaphelper;
 
 import io.restassured.RestAssured;
 import io.restassured.parsing.Parser;
@@ -7,7 +7,7 @@ import io.restassured.specification.ResponseSpecification;
 
 public abstract class AbsBaseSoapClient {
 
-  public AbsBaseSoapClient() {
+  static {
     RestAssured.defaultParser = Parser.XML;
   }
 

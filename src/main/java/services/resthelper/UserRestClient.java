@@ -1,13 +1,13 @@
-package services.RestHelper;
+package services.resthelper;
 
-import dto.User.UserDTO;
+import dto.user.UserDTO;
 import io.restassured.RestAssured;
 import java.util.List;
 
 public class UserRestClient extends AbsBaseRestClient {
 
   public List<UserDTO> getAllUsers(){
-   return RestAssured.given(requestSpecification())
+    return RestAssured.given(requestSpecification())
         .when()
         .get("/user/get/all")
         .then()

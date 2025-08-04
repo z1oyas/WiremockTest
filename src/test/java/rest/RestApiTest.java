@@ -1,19 +1,18 @@
 package rest;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
 import com.github.javafaker.Faker;
-import dto.Courses.CourseDTO;
-import dto.Score.ScoreDTO;
-import dto.User.UserDTO;
+import dto.courses.CourseDTO;
+import dto.score.ScoreDTO;
+import dto.user.UserDTO;
 import extendtions.APIExtentions;
 import jakarta.inject.Inject;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
-import services.RestHelper.CourseRestClient;
-import services.RestHelper.ScoreRestClient;
-import services.RestHelper.UserRestClient;
-
-import static org.junit.jupiter.api.Assertions.assertEquals;
-
+import services.resthelper.CourseRestClient;
+import services.resthelper.ScoreRestClient;
+import services.resthelper.UserRestClient;
 import java.util.List;
 
 @ExtendWith(APIExtentions.class)

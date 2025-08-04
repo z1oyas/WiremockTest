@@ -1,11 +1,11 @@
-package services.SoapHelper;
+package services.soaphelper;
 
 import io.restassured.RestAssured;
 
 public class ScoreSoapClient extends AbsBaseSoapClient {
 
   public String getUserScoreSoap(String soapBody, int id){
-   return RestAssured.given(requestSpecification())
+    return RestAssured.given(requestSpecification())
               .body(soapBody)
               .log().all()
               .when()
