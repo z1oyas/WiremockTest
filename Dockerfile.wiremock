@@ -1,0 +1,17 @@
+FROM maven:3.9.8-eclipse-temurin-17
+
+USER root
+RUN mkdir /app
+WORKDIR /app
+
+COPY pom.xml ./
+RUN mvn dependency:go-offline
+COPY src ./src
+
+
+ENV ALLURE_RESULTS=/app/allure-results
+
+ENTRYPOINT ["sh", "-c", "\
+  mvn clean test \
+  -Dbase_url=${BASE_URL} \
+  -Dallure.results.directory=${ALLURE_RESULTS}"]

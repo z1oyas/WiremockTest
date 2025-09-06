@@ -1,1 +1,1 @@
-Запуск тестов на методы wiremock stub server-a: mvn clean test -Dbase_url=https://petstore.swagger.io/v2/
+Запуск тестов на методы wiremock stub server-a: mvn clean test -Dbase_url="http://127.0.0.1"
