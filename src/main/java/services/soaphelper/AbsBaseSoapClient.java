@@ -13,7 +13,7 @@ public abstract class AbsBaseSoapClient {
 
   protected RequestSpecification requestSpecification(){
     return RestAssured.given()
-               .baseUri(System.getProperty("base.url"))
+               .baseUri(System.getProperty("base.url", "http://127.0.0.1"))
                .basePath("/wiremock")
                .header("Content-Type", "text/xml");
   }
