@@ -40,7 +40,7 @@ public class SoapApiTest {
                                + "</soapenv:Envelope>";
 
     String response = courseSoapClient.getAllCoursesSoap(requestBody);
-
+    System.out.println("Thread: " + Thread.currentThread().getName());
     assertTrue(soapValidator.isValid("Course/soap-envelope.xsd",response));
 
   }
@@ -56,7 +56,7 @@ public class SoapApiTest {
                              + "</soapenv:Envelope>";
 
     String response = scoreSoapClient.getUserScoreSoap(requestBody, randomId);
-
+    System.out.println("Thread: " + Thread.currentThread().getName());
     assertTrue(soapValidator.isValid("UserScore/soap-envelope.xsd",response));
 
   }
@@ -71,7 +71,7 @@ public class SoapApiTest {
                              + "</soapenv:Envelope>";
 
     String response = userSoapClient.getAllUsersSoap(requestBody);
-
+    System.out.println("Thread: " + Thread.currentThread().getName());
     assertTrue(soapValidator.isValid("UserAllUsers/soap-envelope.xsd",response));
 
   }
