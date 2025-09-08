@@ -7,6 +7,13 @@ def slurped = [:]
 timeout(1200){
     node("maven") {
         try {
+
+            stage("Build & Push Docker image") {
+                sh """
+                docker build -f Dockerfile.wiremock -t localhost:5005/wiremock_tests:latest .
+                docker push localhost:5005/wiremock_tests:latest
+                """
+            }
             def base_url = params.base_url
 
             stage("Prepare Allure results") {
