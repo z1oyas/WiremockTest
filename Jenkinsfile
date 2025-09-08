@@ -7,6 +7,9 @@ def slurped = [:]
 timeout(1200){
     node("maven") {
         try {
+            stage("Checkout") {
+                checkout scm
+            }
 
             stage("Build & Push Docker image") {
                 sh """
