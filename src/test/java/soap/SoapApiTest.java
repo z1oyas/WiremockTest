@@ -58,7 +58,7 @@ public class SoapApiTest {
     String response = scoreSoapClient.getUserScoreSoap(requestBody, randomId);
     System.out.println("Thread: " + Thread.currentThread().getName());
     assertTrue(soapValidator.isValid("UserScore/soap-envelope.xsd",response));
-    //test
+    System.out.println("test puling");
   }
 
   @Test
